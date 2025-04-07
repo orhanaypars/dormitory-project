@@ -72,6 +72,7 @@ function Features() {
           </CardHeader>
         </Card>
       </div>
+      <div>Americano cano cano kalp Hanzel</div>
     </div>
   );
 }
