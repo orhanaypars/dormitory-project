@@ -33,12 +33,6 @@ function Footer() {
             >
               İletişim
             </Link>
-            <Link
-              href="/fiyatlar"
-              className="hover:text-yellow-300 transition-colors"
-            >
-              Fiyatlar
-            </Link>
           </div>
 
           {/* Sağ Bölüm: Sosyal Medya */}
@@ -49,7 +43,7 @@ function Footer() {
               rel="noopener noreferrer"
               className="hover:text-yellow-300 transition-colors"
             >
-              <FaFacebook />
+              <FaFacebook size={30} />
             </a>
             <a
               href="https://twitter.com"
@@ -57,7 +51,7 @@ function Footer() {
               rel="noopener noreferrer"
               className="hover:text-yellow-300 transition-colors"
             >
-              <FaTwitter />
+              <FaTwitter size={30} />
             </a>
             <a
               href="https://instagram.com"
@@ -65,7 +59,7 @@ function Footer() {
               rel="noopener noreferrer"
               className="hover:text-yellow-300 transition-colors"
             >
-              <FaInstagram />
+              <FaInstagram size={30} />
             </a>
           </div>
         </div>
