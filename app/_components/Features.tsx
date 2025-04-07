@@ -64,7 +64,7 @@ function Features() {
               <CardTitle className="text-lg font-semibold text-gray-800 dark:text-gray-200">
                 Eksiksiz Afet Yönetimi
               </CardTitle>
-              <FireExtinguisher size={70} className="text-red-800" />
+              <FireExtinguisher size={70} className="text-red-700" />
               <CardDescription className="text-sm text-gray-600 dark:text-gray-400">
                 Afet durumlarında eksiksiz yönetim ve güvenlik.
               </CardDescription>
