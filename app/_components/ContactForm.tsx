@@ -12,7 +12,7 @@ function ContactForm() {
   const [isChecked, setIsChecked] = useState(false);
 
   return (
-    <div className="flex flex-col gap-10 p-8 lg:p-16 bg-gradient-to-r from-blue-50 via-white to-blue-100 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 mt-10 text-center lg:flex-row max-w-6xl mx-auto rounded-lg shadow-xl lg:mt-20">
+    <div className="flex flex-col gap-10 p-8 lg:p-16 bg-gradient-to-r from-blue-50 via-white to-blue-100 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 mt-10 text-center lg:flex-row max-w-6xl mx-auto rounded-lg shadow-xl lg:mt-20 mb-5 lg:mb-15">
       {/* Sol Bölüm: Başlık ve Görsel */}
       <div className="relative flex flex-col items-center lg:items-start gap-5 text-center lg:text-left">
         <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 dark:text-gray-200">
@@ -27,7 +27,7 @@ function ContactForm() {
           alt="contact-image"
           width={150}
           height={150}
-          className="rounded-full shadow-lg lg:absolute lg:top-16 lg:right-[-40px]"
+          className="rounded-full shadow-lg lg:absolute lg:top-36 lg:right-[-10px]"
         />
       </div>
 

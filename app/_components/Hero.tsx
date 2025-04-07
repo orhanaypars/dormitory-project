@@ -39,8 +39,8 @@ export function Hero() {
         <CarouselContent>
           {items.map((item, index) => (
             <CarouselItem key={index}>
-              <Card className="shadow-lg bg-white dark:bg-gray-700 rounded-lg overflow-hidden">
-                <CardTitle className="bg-gradient-to-r from-purple-500 to-pink-500 dark:from-gray-700 dark:to-gray-600 p-4 rounded-t-lg">
+              <Card className="shadow-lg bg-fuchsia-50 dark:bg-gray-700 rounded-lg overflow-hidden">
+                <CardTitle className="bg-gradient-to-r from-purple-500 to-pink-500 dark:from-gray-700 dark:to-gray-600 p-4 rounded-xl">
                   <div className="flex flex-row items-center justify-center gap-3">
                     <h1 className="text-lg font-semibold text-white">
                       {item.title}
