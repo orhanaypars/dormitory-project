@@ -26,7 +26,6 @@ function AboutPage() {
         <Button className="px-6 py-3 text-sm md:text-base lg:text-lg bg-orange-500 hover:bg-orange-600 text-white dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-200">
           Daha Fazla Bilgi
         </Button>
-        <div>Aybars lavuğu</div>
       </div>
     </div>
   );
