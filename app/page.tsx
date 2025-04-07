@@ -33,7 +33,6 @@ export default function Home() {
         <CommentsSection />
         <FavQuest />
         <ContactForm />
-        <dialog>Aybars celil</dialog>
       </main>
     </>
   );
