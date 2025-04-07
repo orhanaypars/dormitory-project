@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -48,7 +49,7 @@ function Footer() {
               rel="noopener noreferrer"
               className="hover:text-yellow-300 transition-colors"
             >
-              Facebook
+              <FaFacebook />
             </a>
             <a
               href="https://twitter.com"
@@ -56,7 +57,7 @@ function Footer() {
               rel="noopener noreferrer"
               className="hover:text-yellow-300 transition-colors"
             >
-              Twitter
+              <FaTwitter />
             </a>
             <a
               href="https://instagram.com"
@@ -64,7 +65,7 @@ function Footer() {
               rel="noopener noreferrer"
               className="hover:text-yellow-300 transition-colors"
             >
-              Instagram
+              <FaInstagram />
             </a>
           </div>
         </div>
