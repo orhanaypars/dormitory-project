@@ -3,6 +3,7 @@ import CommentsSection from "./_components/CommentsSection";
 import ContactForm from "./_components/ContactForm";
 import FavQuest from "./_components/FavQuest";
 import Features from "./_components/Features";
+import LocationSection from "./_components/LocationSection";
 import { Hero } from "./_components/Hero";
 import Head from "next/head";
 
@@ -33,6 +34,7 @@ export default function Home() {
         <CommentsSection />
         <FavQuest />
         <ContactForm />
+        <LocationSection />
       </main>
     </>
   );

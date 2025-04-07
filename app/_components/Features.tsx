@@ -10,7 +10,7 @@ import { FireExtinguisher } from "lucide-react";
 
 function Features() {
   return (
-    <div className="flex flex-col items-center justify-center mx-auto mt-10 text-center space-y-8 px-4 md:px-10 lg:px-20 lg:mt-20">
+    <div className="flex flex-col items-center justify-center mx-auto mt-10 text-center space-y-8 px-4 md:px-10 lg:px-20 lg:mt-20 max-w-6xl">
       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 dark:text-gray-200">
         Özelliklerimiz
       </h1>
