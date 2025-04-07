@@ -2,14 +2,39 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "@radix-ui/react-checkbox";
-import { Label } from "@radix-ui/react-label";
 import Image from "next/image";
-import { useState } from "react";
-import { CheckIcon } from "@radix-ui/react-icons"; // Radix UI'den tik ikonu
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Textarea } from "@/components/ui/textarea";
+import { formSchema } from "@/lib/validators";
+import { sendEmail } from "@/lib/email";
+import { toast } from "sonner";
 
 function ContactForm() {
-  const [isChecked, setIsChecked] = useState(false);
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    },
+  });
+
+  // 2. Define a submit handler.
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    sendEmail(values);
+    toast.success("Mesajınız başarıyla gönderilmiştir");
+  }
 
   return (
     <div className="flex flex-col gap-10 p-8 lg:p-16 bg-gradient-to-r from-blue-50 via-white to-blue-100 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 mt-10 text-center lg:flex-row max-w-6xl mx-auto rounded-lg shadow-xl lg:mt-20 md:mb-5 lg:mb-15">
@@ -32,86 +57,110 @@ function ContactForm() {
       </div>
 
       {/* Sağ Bölüm: Form */}
-      <div className="flex flex-col gap-6 w-full lg:w-1/2">
-        {/* Ad Soyad */}
-        <div className="flex flex-col gap-2">
-          <Label
-            htmlFor="name"
-            className="text-sm font-medium text-gray-700 dark:text-gray-300"
-          >
-            Ad Soyad
-          </Label>
-          <Input
-            id="name"
-            type="text"
-            placeholder="Adınızı ve soyadınızı girin"
-            className="w-full rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-          />
-        </div>
-
-        {/* Email */}
-        <div className="flex flex-col gap-2">
-          <Label
-            htmlFor="email"
-            className="text-sm font-medium text-gray-700 dark:text-gray-300"
-          >
-            Email
-          </Label>
-          <Input
-            id="email"
-            type="email"
-            placeholder="Email adresinizi girin"
-            className="w-full rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-          />
-        </div>
-
-        {/* Telefon Numarası */}
-        <div className="flex flex-col gap-2">
-          <Label
-            htmlFor="phone"
-            className="text-sm font-medium text-gray-700 dark:text-gray-300"
-          >
-            Telefon Numarası
-          </Label>
-          <Input
-            id="phone"
-            type="tel"
-            placeholder="Telefon numaranızı girin"
-            className="w-full rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-          />
-        </div>
-
-        {/* Şartlar ve Koşullar */}
-        <div className="flex items-center gap-3">
-          <Checkbox
-            id="terms"
-            className="h-5 w-5 rounded border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 hover:ring-2 hover:border-green-400 focus:ring-2 focus:border-green-400 flex items-center justify-center"
-            checked={isChecked}
-            onCheckedChange={(checked) => setIsChecked(checked === true)}
-          >
-            {/* Tik İşareti */}
-            {isChecked && <CheckIcon className="text-green-800 w-16 h-16" />}
-          </Checkbox>
-          <Label
-            htmlFor="terms"
-            className="text-sm text-gray-700 dark:text-gray-300 cursor-pointer"
-          >
-            Şartları ve koşulları kabul ediyorum
-          </Label>
-        </div>
-
-        {/* Gönder Butonu */}
-        <Button
-          className={`w-full py-3 rounded-lg ${
-            isChecked
-              ? "bg-green-500 hover:bg-green-600 dark:bg-green-400 dark:hover:bg-green-500 text-white"
-              : "bg-gray-400 cursor-not-allowed"
-          }`}
-          disabled={!isChecked}
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="flex flex-col gap-6 w-full lg:w-1/2"
         >
-          Gönder
-        </Button>
-      </div>
+          {/* Ad Soyad */}
+          <div className="flex flex-col gap-2 text-center">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    Ad ve Soyad
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Adınızı ve Soyadınızı giriniz..."
+                      {...field}
+                      className="w-full rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+
+          {/* Email */}
+          <div className="flex flex-col gap-2">
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    Email
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Email giriniz..."
+                      {...field}
+                      className="w-full rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+
+          {/* Telefon Numarası */}
+          <div className="flex flex-col gap-2">
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    Telefon No.
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Telefon numarınızı giriniz giriniz..."
+                      {...field}
+                      className="w-full rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+
+          {/* Mesaj Kısmı */}
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  Mesaj
+                </FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder="Mesajınız..."
+                    {...field}
+                    className="w-full rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          {/* Gönder Butonu */}
+          <Button
+            type="submit"
+            className="w-full px-2 py-2 bg-green-500 hover:bg-green-600"
+          >
+            Gönder
+          </Button>
+        </form>
+      </Form>
     </div>
   );
 }
