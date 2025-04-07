@@ -33,6 +33,7 @@ export default function Home() {
         <CommentsSection />
         <FavQuest />
         <ContactForm />
+        <div>Enes Geldi Deneme 13</div>
       </main>
     </>
   );
