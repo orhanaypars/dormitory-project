@@ -7,9 +7,9 @@ import Logo from "@/public/favicon.png";
 
 const navLinks = [
   { label: "Anasayfa", href: "/" },
-  { label: "Hakkımızda", href: "/about" }, // Benzersiz href
-  { label: "İletişim", href: "/contact" }, // Benzersiz href
-  { label: "Konum", href: "/location" }, // Benzersiz href
+  { label: "Hakkımızda", href: "/about" },
+  { label: "İletişim", href: "/contact" },
+  { label: "Konum", href: "/location" },
 ];
 
 function DesktopNavbar() {
@@ -26,12 +26,10 @@ function DesktopNavbar() {
           />
           <div className="text-2xl font-bold text-white">Özel Kız Yurdu</div>
         </div>
-
-        {/* Sağ taraf: Linkler ve toggle */}
         <div className="flex items-center gap-12">
           {navLinks.map((link, index) => (
             <Link
-              key={index} // Benzersiz key olarak index kullanıldı
+              key={index}
               href={link.href}
               className="text-lg font-medium text-white hover:text-yellow-300 transition-colors"
             >
