@@ -17,8 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Özel Kız Öğrenci Yurtları",
-  description: "Turkish student dormitory website",
+  title: "Özel Kız Öğrenci Yurtları | Güvenli ve Konforlu Yaşam Alanı",
+  description:
+    "Özel kız öğrenci yurdu olarak güvenli, konforlu ve modern bir yaşam alanı sunuyoruz. Merkezi konum, 7/24 güvenlik, yüksek hızlı internet ve sosyal alanlar ile öğrencilerimize en iyi hizmeti sağlıyoruz.",
 };
 
 export default function RootLayout({
@@ -30,6 +31,28 @@ export default function RootLayout({
     <html lang="tr" className="light" style={{ colorScheme: "light" }}>
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" />
+        {/* SEO Meta Etiketleri */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="keywords"
+          content="kız öğrenci yurdu, özel kız yurdu, güvenli yurt, konforlu yurt, öğrenci yurdu, merkezi yurt, yüksek hızlı internet, sosyal alanlar"
+        />
+        <meta
+          name="author"
+          content="Özel Kız Öğrenci Yurtları - Aypars Çelik"
+        />
+        <meta
+          property="og:title"
+          content="Özel Kız Öğrenci Yurtları | Güvenli ve Konforlu Yaşam Alanı"
+        />
+        <meta
+          property="og:description"
+          content="Özel kız öğrenci yurdu olarak güvenli, konforlu ve modern bir yaşam alanı sunuyoruz. Merkezi konum, 7/24 güvenlik, yüksek hızlı internet ve sosyal alanlar ile öğrencilerimize en iyi hizmeti sağlıyoruz."
+        />
+        <meta property="og:image" content="/about-image.jpg" />
+        <meta property="og:url" content="https://www.ozelkizyurdu.com" />
+        <meta property="og:type" content="website" />
+        <meta name="robots" content="index, follow" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

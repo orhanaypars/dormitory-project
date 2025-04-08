@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link"; // Link bileşeni eklendi
 
 function AboutPage() {
   return (
@@ -18,14 +19,17 @@ function AboutPage() {
           Hakkımızda
         </h1>
         <p className="text-sm md:text-base lg:text-lg mb-5 text-gray-700 dark:text-gray-400">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-          repellat tenetur totam cumque in debitis sit voluptatibus.
-          Consequuntur amet autem labore nihil vero, voluptate voluptas delectus
-          magni aliquid repudiandae quaerat laborum iste ducimus, esse itaque.
+          Özel Kız Yurdu olarak, öğrencilerimize güvenli, konforlu ve modern bir
+          yaşam alanı sunmayı hedefliyoruz. Yurdumuz, merkezi konumu sayesinde
+          üniversitelere ve toplu taşıma araçlarına kolay erişim imkanı sağlar.
+          7/24 güvenlik hizmetlerimiz ve yüksek hızlı internet altyapımız ile
+          öğrencilerimizin ihtiyaçlarını en iyi şekilde karşılıyoruz.
         </p>
-        <Button className="px-6 py-3 text-sm md:text-base lg:text-lg bg-orange-500 hover:bg-orange-600 text-white dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-200">
-          Daha Fazla Bilgi
-        </Button>
+        <Link href="/about">
+          <Button className="px-6 py-3 text-sm md:text-base lg:text-xl bg-orange-500 hover:bg-orange-600 text-white dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-200">
+            Daha Fazla Bilgi
+          </Button>
+        </Link>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import MobileNavbar from "./MobileNavbar";
 
 function Navbar() {
   return (
-    <div>
+    <div id="navbar">
       <div className="lg:hidden">
         <MobileNavbar />
       </div>

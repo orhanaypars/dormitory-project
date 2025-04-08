@@ -2,7 +2,6 @@ import { ModeToggle } from "@/components/ui/mode-toggle";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
@@ -14,9 +13,9 @@ import Link from "next/link";
 function MobileNavbar() {
   const navLinks = [
     { label: "Anasayfa", href: "/" },
-    { label: "Hakkımızda", href: "/hakkimizda" },
-    { label: "İletişim", href: "/iletisim" },
-    { label: "Konum", href: "/konum" },
+    { label: "Hakkımızda", href: "/about" },
+    { label: "İletişim", href: "/contact" },
+    { label: "Konum", href: "/location" },
   ];
 
   return (
@@ -41,25 +40,21 @@ function MobileNavbar() {
                   className="rounded-full mb-5"
                 />
               </div>
-              <SheetDescription>
-                <div className="flex flex-col gap-6">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="text-lg font-medium text-gray-800 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              </SheetDescription>
+              <div className="flex flex-col gap-6">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-lg font-medium text-gray-800 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
             </SheetHeader>
           </SheetContent>
         </Sheet>
-        <div>
-          <ModeToggle />
-        </div>
+        <ModeToggle />
       </div>
     </div>
   );

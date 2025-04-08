@@ -7,14 +7,14 @@ import Logo from "@/public/favicon.png";
 
 const navLinks = [
   { label: "Anasayfa", href: "/" },
-  { label: "Hakkımızda", href: "/hakkimizda" },
-  { label: "İletişim", href: "/iletisim" },
-  { label: "Konum", href: "/konum" },
+  { label: "Hakkımızda", href: "/about" }, // Benzersiz href
+  { label: "İletişim", href: "/contact" }, // Benzersiz href
+  { label: "Konum", href: "/location" }, // Benzersiz href
 ];
 
 function DesktopNavbar() {
   return (
-    <div className="hidden lg:flex items-center justify-between  py-6 shadow-md bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 sticky top-0 z-50 w-full">
+    <div className="hidden lg:flex items-center justify-between py-6 shadow-md bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 sticky top-0 z-50 w-full">
       <div className="flex items-center justify-between w-full max-w-6xl mx-auto">
         <div className="flex items-center gap-4">
           <Image
@@ -29,9 +29,9 @@ function DesktopNavbar() {
 
         {/* Sağ taraf: Linkler ve toggle */}
         <div className="flex items-center gap-12">
-          {navLinks.map((link) => (
+          {navLinks.map((link, index) => (
             <Link
-              key={link.href}
+              key={index} // Benzersiz key olarak index kullanıldı
               href={link.href}
               className="text-lg font-medium text-white hover:text-yellow-300 transition-colors"
             >

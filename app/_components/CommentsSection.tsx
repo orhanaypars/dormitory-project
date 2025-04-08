@@ -31,8 +31,9 @@ function CommentsSection() {
               Simay
             </CardTitle>
             <CardDescription className="text-sm text-gray-600 dark:text-gray-400">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Laudantium, quidem.
+              "Yurdun konumu gerçekten harika! Üniversiteye çok yakın ve toplu
+              taşıma araçlarına kolayca ulaşabiliyorum. Ayrıca, odalar çok
+              konforlu ve temiz."
             </CardDescription>
           </CardHeader>
         </Card>
@@ -51,8 +52,8 @@ function CommentsSection() {
               Ayşe
             </CardTitle>
             <CardDescription className="text-sm text-gray-600 dark:text-gray-400">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Laudantium, quidem.
+              "7/24 sıcak su ve güvenlik hizmetleri sayesinde kendimi çok
+              güvende hissediyorum. Ayrıca, internet hızı gerçekten çok iyi!"
             </CardDescription>
           </CardHeader>
         </Card>
@@ -71,8 +72,8 @@ function CommentsSection() {
               Ceren
             </CardTitle>
             <CardDescription className="text-sm text-gray-600 dark:text-gray-400">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Laudantium, quidem.
+              "Yurtta düzenlenen sosyal etkinlikler sayesinde birçok yeni
+              arkadaş edindim. Burada kendimi evimde gibi hissediyorum!"
             </CardDescription>
           </CardHeader>
         </Card>
