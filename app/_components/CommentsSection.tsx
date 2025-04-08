@@ -31,9 +31,11 @@ function CommentsSection() {
               Simay
             </CardTitle>
             <CardDescription className="text-sm text-gray-600 dark:text-gray-400">
-              "Yurdun konumu gerçekten harika! Üniversiteye çok yakın ve toplu
-              taşıma araçlarına kolayca ulaşabiliyorum. Ayrıca, odalar çok
-              konforlu ve temiz."
+              <p>
+                &quot;Yurdun konumu gerçekten harika! Üniversiteye çok yakın ve
+                toplu taşıma araçlarına kolayca ulaşabiliyorum. Ayrıca, odalar
+                çok konforlu ve temiz.&quot;
+              </p>
             </CardDescription>
           </CardHeader>
         </Card>
@@ -52,8 +54,11 @@ function CommentsSection() {
               Ayşe
             </CardTitle>
             <CardDescription className="text-sm text-gray-600 dark:text-gray-400">
-              "7/24 sıcak su ve güvenlik hizmetleri sayesinde kendimi çok
-              güvende hissediyorum. Ayrıca, internet hızı gerçekten çok iyi!"
+              <p>
+                &quot;7/24 sıcak su ve güvenlik hizmetleri sayesinde kendimi çok
+                güvende hissediyorum. Ayrıca, internet hızı gerçekten çok
+                iyi!&quot;
+              </p>
             </CardDescription>
           </CardHeader>
         </Card>
@@ -72,8 +77,10 @@ function CommentsSection() {
               Ceren
             </CardTitle>
             <CardDescription className="text-sm text-gray-600 dark:text-gray-400">
-              "Yurtta düzenlenen sosyal etkinlikler sayesinde birçok yeni
-              arkadaş edindim. Burada kendimi evimde gibi hissediyorum!"
+              <p>
+                &quot;Yurtta düzenlenen sosyal etkinlikler sayesinde birçok yeni
+                arkadaş edindim. Burada kendimi evimde gibi hissediyorum!&quot;
+              </p>
             </CardDescription>
           </CardHeader>
         </Card>
