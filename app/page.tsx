@@ -23,7 +23,7 @@ export default function Home() {
           content="Öğrenciler için modern, konforlu ve güvenli bir yaşam alanı."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://seninsiten.com/" />
+        <meta property="og:url" content="dormitory-project-kappa.vercel.app" />
         <meta property="og:image" content="/og-image.jpg" />
       </Head>
 
