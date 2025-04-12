@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import { GiCctvCamera } from "react-icons/gi";
-import { FaBed } from "react-icons/fa";
+import { FaBed, FaCouch, FaMountain, FaShower } from "react-icons/fa";
 import { useEffect, useState } from "react";
 
 const items = [
@@ -23,6 +23,21 @@ const items = [
     image: "/image-2.jpeg",
     title: "Konforlu Odalar",
     icon: <FaBed className="text-4xl text-yellow-500" />,
+  },
+  {
+    image: "/view-image.jpg",
+    title: "Eşsiz Manzara",
+    icon: <FaMountain className="text-4xl text-green-500" />,
+  },
+  {
+    image: "/hol-image.jpg",
+    title: "Geniş ve Ferah Hol",
+    icon: <FaCouch className="text-4xl text-orange-500" />,
+  },
+  {
+    image: "/banyo-image.jpg",
+    title: "Modern Banyolar",
+    icon: <FaShower className="text-4xl text-blue-400" />,
   },
 ];
 

@@ -3,6 +3,7 @@ import {
   Sheet,
   SheetContent,
   SheetHeader,
+  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -31,6 +32,10 @@ function MobileNavbar() {
           </SheetTrigger>
           <SheetContent className="bg-gradient-to-r from-purple-100 via-pink-100 to-red-100 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800">
             <SheetHeader>
+              {/* Başlık Eklendi */}
+              <SheetTitle className="text-center text-xl font-bold text-gray-800 dark:text-gray-200">
+                Menü
+              </SheetTitle>
               <div className="flex justify-center">
                 <Image
                   src={Logo}
